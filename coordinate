@@ -1,0 +1,22 @@
+# Convert decimal to radian *pi/180
+lat = lat_input *pi/180
+lon = lon_input *pi/180
+
+#Convert lat/lon (must be in radians) to Cartesian coordinates for each location.
+X = cos(lat) * cos(lon)
+Y = cos(lat) * sin(lon)
+Z = sin(lat)
+
+#Compute average x, y and z coordinates.
+x = (x1 + x2 + ... + xn) / n
+y = (y1 + y2 + ... + yn) / n
+z = (z1 + z2 + ... + zn) / n
+
+#Convert average x, y, z coordinate to latitude and longitude.
+Lon = atan2(y, x)
+Hyp = sqrt(x * x + y * y)
+Lat = atan2(z, hyp)
+
+#Convert back to decimals
+lat_out = Lat *180/pi
+lon_out = Lon *180/pi
